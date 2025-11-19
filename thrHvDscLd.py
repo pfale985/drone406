@@ -147,14 +147,15 @@ for i in range(50):  # ~10 seconds
 # DESCEND
 # -------------------------------
 print("Descending...")
-for i in range(20):
+for i in range(10):
     send_attitude_target(thrust=DESCEND_THRUST)
     time.sleep(0.1)
 
 # -------------------------------
-# DISARM
+# Land
 # -------------------------------
-print("Landing complete. Disarming...")
-master.arducopter_disarm()
-master.motors_disarmed_wait()
+print("Setting mode: LAND")
+mode = 'LAND'
+master.set_mode_apm(mode)
+print("Landing complete.")
 print("Disarmed successfully.")
