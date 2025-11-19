@@ -21,7 +21,7 @@ import time
 # -------------------------------
 # USER CONFIGURATION
 # -------------------------------
-SERIAL_PORT = 'COM12'   # change this based on findings
+SERIAL_PORT = '/dev/serial0'   # change this based on findings
 BAUD_RATE = 115200
 
 #MUST SET GUID_OPTIONS TO 8
