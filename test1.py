@@ -19,7 +19,7 @@ import time
 # -------------------------------
 # USER CONFIGURATION
 # -------------------------------
-SERIAL_PORT = 'COM12'   # change this based on findings
+SERIAL_PORT = '/dev/serial0'   # change this based on findings
 BAUD_RATE = 115200
 
 # Flight parameters (for GUID_OPTIONS=0: climb rate mode)
@@ -129,4 +129,5 @@ for i in range(30):
 print("Landing complete. Disarming...")
 master.arducopter_disarm()
 master.motors_disarmed_wait()
+
 print("Disarmed successfully.")
