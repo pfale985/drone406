@@ -133,37 +133,36 @@ for i in range(3, 0, -1):
 print("GO!\n")
 
 print("Taking off...")
+print('0')
+for i in range(20):  # ~3 seconds at 10Hz
+    send_attitude_target(thrust=0)
+    time.sleep(0.1)
+
+print('10')
 for i in range(20):  # ~3 seconds at 10Hz
     send_attitude_target(thrust=0.1)
     time.sleep(0.1)
 
+print('20')
 for i in range(20):  # ~3 seconds at 10Hz
     send_attitude_target(thrust=0.2)
     time.sleep(0.1)
 
+print('30')
 for i in range(20):  # ~3 seconds at 10Hz
     send_attitude_target(thrust=0.3)
     time.sleep(0.1)
 
+print('40')
 for i in range(20):  # ~3 seconds at 10Hz
     send_attitude_target(thrust=0.4)
     time.sleep(0.1)
-
-for i in range(20):  # ~3 seconds at 10H
-    send_attitude_target(thrust=0.3)
-    time.sleep(0.1)
-
-for i in range(20):  # ~3 seconds at 10H
-    send_attitude_target(thrust=0.2)
-    time.sleep(0.1)
-
-for i in range(20):  # ~3 seconds at 10H
-    send_attitude_target(thrust=0.1)
-    time.sleep(0.1)
+    
 # -------------------------------
-# DISARM
+# Land
 # -------------------------------
-print("Landing complete. Disarming...")
-master.arducopter_disarm()
-master.motors_disarmed_wait()
+print("Setting mode: LAND")
+mode = 'LAND'
+master.set_mode_apm(mode)
+print("Landing complete.")
 print("Disarmed successfully.")
