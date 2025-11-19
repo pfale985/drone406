@@ -21,7 +21,7 @@ import time
 # -------------------------------
 # USER CONFIGURATION
 # -------------------------------
-SERIAL_PORT = 'COM12'   # change this based on findings
+SERIAL_PORT = '/dev/serial0'   # change this based on findings
 BAUD_RATE = 115200
 
 # Flight parameters (for GUID_OPTIONS=0: climb rate mode)
@@ -159,3 +159,4 @@ mode = 'LAND'
 master.set_mode_apm(mode)
 print("Landing complete.")
 print("Disarmed successfully.")
+
