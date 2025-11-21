@@ -5,13 +5,18 @@ import numpy as np
 from picamera2 import Picamera2
 from PIL import Image
 
-# Initialize webcam
-cap = cv2.VideoCapture(0)
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
-if not cap.isOpened():
-    print("Cannot open camera")
-    exit()
+def main():
+    print("Initializing AprilTag detector...")
+    print(f"Resolution: {RESOLUTION[0]}x{RESOLUTION[1]}")
+    
+    # Initialize camera
+    picam2 = Picamera2()
+    config = picam2.create_preview_configuration(
+        main={"size": RESOLUTION, "format": "RGB888"}
+    )
+    picam2.configure(config)
+    picam2.start()
+    time.sleep(2)  # Let camera warm up
 
 
 # Set HSV boundaries for colors
