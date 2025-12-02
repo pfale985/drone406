@@ -164,4 +164,4 @@ print("Setting mode: LAND")
 mode = 'LAND'
 master.set_mode_apm(mode)
 print("Landing complete.")
-print("Disarmed successfully.")#placeholder
+print("Disarmed successfully.")
